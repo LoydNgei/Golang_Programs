@@ -1,27 +1,20 @@
-// package main
+package main
 
-// import "fmt"
+import (
+	"fmt"
+)
 
-// func SimpleFunction() {
-// 	fmt.Println("Hello World")
-// }
+type First func(int) int
+type Second func(int) First
 
-// func main() {
-// 	SimpleFunction()
-// }
+func squareSum(x int) Second {
+	return func(y int) First {
+		return func(z int) int {
+			return x*x + y*y + z*z
+		}
+	}
+}
 
-// package main
-
-// import "fmt"
-
-// func add(x int, y int) int {
-// 	total := 0
-// 	total = x + y
-// 	return total
-// }
-
-// func main() {
-// 	sum := add(20, 30)
-// 	fmt.Println(sum)
-// }
-
+func main() {
+	fmt.Println(squareSum(76)(608)(7867))
+}
