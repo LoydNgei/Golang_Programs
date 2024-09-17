@@ -16,3 +16,22 @@ func ReadWrite() bool {
 	}
 	return true
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
